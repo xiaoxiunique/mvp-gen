@@ -1,5 +1,11 @@
 db:
-  type: mongodb
+  type: MONGODB
+  config:
+    user:
+    host:
+    database:
+    password:
+    port:
 
 debugger: true
 onlineTable: true

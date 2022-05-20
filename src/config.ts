@@ -21,11 +21,17 @@ export type Config = {
   }}
   output: any
 }
+
 export interface Model {
   name: string
   Name: string
+  fieldName?: string
+  tableName?: string
 }
 
+/**
+ * load yml config
+ */
 export function load(): Config {
   const r = fs.readFileSync(path.join(__dirname, 'dev.yml'))
   return yaml.parse(r.toString())
