@@ -1,0 +1,22 @@
+db:
+  type: mongodb
+
+debugger: true
+onlineTable: true
+tables:
+  - apps
+enable: bsc-backend
+
+template:
+  bsc-backend:
+    out: output
+    ext: ts
+    path:
+      Bean.controller.t:
+        base: controllers
+      Bean.service.t:
+        base: services
+      Bean.schema.t:
+        base: schemas
+
+output:
