@@ -1,5 +1,6 @@
 import {Parse} from "./parse";
 import {MongoDB} from "./mongodb";
+import {Postgres} from "./postgres";
 
 
 export class Factory {
@@ -20,7 +21,9 @@ export class Factory {
 
   public static init() {
     const mongoDB = new MongoDB();
+    const postgresDB = new Postgres()
     this.FACTORY.set(mongoDB.name, mongoDB)
+    this.FACTORY.set(postgresDB.name, postgresDB)
   }
 
 }

@@ -1,17 +1,18 @@
 db:
-  type: MONGODB
+  type: POSTGRES
   config:
-    user:
-    host:
-    database:
-    password:
-    port:
+    user: postgres
+    host: 47.109.34.74
+    database: example
+    password: zhaojunlike
+    port: 5432
 
 debugger: true
 onlineTable: true
 tables:
-  - apps
-enable: bsc-backend
+  - calendars
+  - socialmedia_discord_states
+enable: backend-pg
 
 template:
   bsc-backend:
@@ -24,5 +25,17 @@ template:
         base: services
       Bean.schema.t:
         base: schemas
+  backend-pg:
+    out: output
+    ext: ts
+    path:
+      Bean.controller.t:
+        base: controllers
+      Bean.service.t:
+        base: services
+      Bean.entity.t:
+        base: schemas
+      Bean.dto.t:
+        base: dto
 
 output:

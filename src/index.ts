@@ -11,11 +11,11 @@ import { Factory } from './engine/factory';
 import * as lodash from 'lodash';
 import path from 'path';
 
-export function build() {
+export async function build() {
   Factory.init();
   const config = load();
-  const parser = Factory.getHandler('MONGODB');
-  const models = parser?.generate(config);
+  const parser = Factory.getHandler(config.db.type);
+  const models = await parser?.generate(config);
 
   if (!models) {
     console.error('models is Empty');
@@ -30,7 +30,8 @@ export function build() {
       const filename = lodash.replace(
         template.substr(0, template.indexOf('.t')) + `.${ext}`,
         'Bean',
-        model.name
+          // @ts-ignore
+        model.controllerName
       );
       const filepath = path.join(
         config.template[config.enable].out,
@@ -70,4 +71,4 @@ export function build() {
   }, 1000);
 }
 
-build();
+build().then(console.log).catch(console.error);

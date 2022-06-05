@@ -8,7 +8,14 @@ export type templateNames = 'bsc-backend'
 
 export type Config = {
   db: {
-    type: string
+    type: string,
+    config: {
+      user: string
+      host: string
+      database: string
+      password: string
+      port: number
+    }
   }
   debugger: boolean
   onlineTable: boolean
@@ -27,6 +34,7 @@ export interface Model {
   Name: string
   fieldName?: string
   tableName?: string
+  fields: unknown[]
 }
 
 /**

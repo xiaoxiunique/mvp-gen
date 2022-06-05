@@ -14,6 +14,9 @@
     "gulp-nunjucks-render": "^2.2.3",
     "gulp-rename": "^2.0.0",
     "lodash": "^4.17.21",
+    "pg": "^8.7.3",
+    "string": "^3.3.3",
+    "strings": "^0.4.2",
     "typescript": "^4.6.4",
     "yaml": "^2.1.0"
   },
@@ -21,6 +24,8 @@
     "@types/gulp": "^4.0.9",
     "@types/gulp-rename": "^2.0.1",
     "@types/node": "^17.0.35",
+    "@types/pg": "^8.6.5",
+    "@types/string": "^0.0.31",
     "prettier": "^2.6.2"
   }
 }
