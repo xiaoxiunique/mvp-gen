@@ -1,12 +1,18 @@
 db:
   type: POSTGRES
   config:
-    user: postgres
-    host: 47.109.34.74
-    database: example
-    password: zhaojunlike
-    port: 5432
-
+    user: tsdbadmin
+    host: xxymlqow06.bn122svyo5.tsdb.cloud.timescale.com
+    database: tsdb
+    password: bjjb8dvy5yi7q0h9
+    port: 32260
+#    user: postgres
+#    host: 47.109.34.74
+#    database: verytech_web
+#    password: zhaojunlike
+#    port: 5432
+#
+#
 debugger: true
 onlineTable: true
 tables:
@@ -37,5 +43,11 @@ template:
         base: schemas
       Bean.dto.t:
         base: dto
+#      Bean.schema.t:
+#        base: ts-schema
+#      Bean.t:
+#        base: api
+#      Bean.vue.t:
+#        base: vue
 
 output:

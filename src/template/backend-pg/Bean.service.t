@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
+import { BaseService } from '@shared/utils/base.service';
 import { getRepository } from 'typeorm';
-import { <$ model.Name $>Entity } from 'src/modules/entities/<$ model.name $>.entity';
-import { BaseService } from 'src/common/base.service';
+import { <$ model.Name $>Entity } from '@shared/entities';
 
 @Injectable()
 export class <$ model.Name $>Service extends BaseService {
